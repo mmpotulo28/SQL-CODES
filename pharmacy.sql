@@ -4,45 +4,32 @@ CREATE DATABASE mpotulo_pharmacy;
 /*********create tables*********/
 CREATE TABLE customers
 (
-    customer_id int PRIMARY KEY AUTO_INCREMENT,
-    customer_name varchar
-(255),
-    customer_email varchar
-(255),
-    customer_phone varchar
-(255),
-    customer_address
-(255),
-    customer_email varchar
-(255),
-    customer_phone varchar
-(255),
-    customer_address varchar
-(255)
+    customer_id int IDENTITY(1,1) PRIMARY KEY ,
+    customer_name varchar(255),
+    customer_email varchar(255),
+    customer_phone varchar(255),
+    customer_address VARCHAR(255),
+    customer_email varchar(255),
+    customer_phone varchar(255),
+    customer_address varchar(255)
 );
 
 CREATE TABLE products
 (
-    product_id int PRIMARY KEY AUTO_INCREMENT,
-    product_name varchar
-(255),
-    product_price decimal
-(10,2),
+    product_id int IDENTITY(1,1) PRIMARY KEY,
+    product_name varchar(255),
+    product_price decimal(10,2),
     product_quantity int
 );
 
 CREATE TABLE orders
 (
-    order_id int PRIMARY KEY AUTO_INCREMENT,
+    order_id int IDENTITY(1,1) PRIMARY KEY,
     customer_id int,
     order_date date,
     product_id int,
-    FOREIGN KEY
-(customer_id) REFERENCES customers
-(customer_id),
-    FOREIGN KEY
-(product_id) REFERENCES products
-(product_id)
+    FOREIGN KEY(customer_id) REFERENCES customers(customer_id),
+    FOREIGN KEY(product_id) REFERENCES products(product_id)
 );
 
 -- insert data
