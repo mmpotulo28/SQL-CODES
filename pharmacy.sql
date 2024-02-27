@@ -5,10 +5,14 @@ CREATE DATABASE mpotulo_pharmacy;
 CREATE TABLE customers
 (
     customer_id int PRIMARY KEY AUTO_INCREMENT,
-    customer_name varchar(255),
-    customer_email varchar(255),
-    customer_phone varchar(255),
-    customer_address(255),
+    customer_name varchar
+(255),
+    customer_email varchar
+(255),
+    customer_phone varchar
+(255),
+    customer_address
+(255),
     customer_email varchar
 (255),
     customer_phone varchar
